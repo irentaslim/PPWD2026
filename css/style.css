@@ -1,0 +1,123 @@
+* {
+  box-sizing: border-box;
+  }
+
+body {
+margin: 0;
+font-family: Arial, sans-serif;
+background-color: #fff0f5;
+color: #4d3740;
+}
+
+.container {
+width: 80%;
+max-width: 800px;
+margin: 40px auto;
+background-color: white;
+border-radius: 15px;
+overflow: hidden;
+box-shadow: 0 5px 20px #e6cbd5;
+}
+
+.header {
+text-align: center;
+padding: 40px 20px;
+background-color: #f7c6d9;
+}
+
+.header h1 {
+margin: 0;
+color: #9b4266;
+}
+
+.header p {
+margin-top: 10px;
+}
+
+.about,
+.hobby,
+.comment {
+padding: 30px;
+}
+
+h2 {
+color: #c4567e;
+}
+
+.data {
+background-color: #fff5f8;
+padding: 15px 20px;
+border-radius: 10px;
+}
+
+.data p {
+margin: 8px 0;
+}
+
+.hobby {
+background-color: #fff8fa;
+}
+
+.hobby-list {
+display: flex;
+gap: 20px;
+}
+
+.hobby-list div {
+flex: 1;
+padding: 20px;
+text-align: center;
+background-color: #fde3ec;
+border-radius: 10px;
+}
+
+.hobby-list span {
+font-size: 30px;
+}
+
+.hobby-list h3 {
+color: #a84d70;
+}
+
+input,
+textarea {
+width: 100%;
+padding: 12px;
+margin: 8px 0 15px;
+border: 1px solid #e6b9ca;
+border-radius: 8px;
+font-family: Arial, sans-serif;
+}
+
+textarea {
+height: 100px;
+resize: none;
+}
+
+button {
+width: 100%;
+padding: 12px;
+border: none;
+border-radius: 8px;
+background-color: #d66b91;
+color: white;
+cursor: pointer;
+}
+
+button:hover {
+background-color: #b95378;
+}
+
+.pesan {
+padding: 10px;
+background-color: #fce0eb;
+color: #9b4266;
+border-radius: 8px;
+}
+
+footer {
+text-align: center;
+padding: 15px;
+background-color: #f7c6d9;
+color: #7d4056;
+}
