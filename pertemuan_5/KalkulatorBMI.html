@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Kalkulator BMI</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 400px;
+            margin: 50px auto;
+            padding: 20px;
+            background: #d00181;
+        }
+
+        .kalkulator {
+            background: rgb(4, 234, 211);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px lch(75.33% 42.99 163.71 / 0.1);
+            text-align: center;
+        }
+
+        input {
+            padding: 10px;
+            margin: 5px;
+            font-size: 16px;
+            width: 80%;
+            box-sizing: border-box;
+        }
+
+        button {
+            padding: 10px 15px;
+            margin: 5px;
+            font-size: 16px;
+            background: #ff05c9;
+            color: rgb(0, 0, 0);
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #ffbff1;
+        }
+
+        .hasil {
+            font-size: 28px;
+            font-weight: bold;
+            color: #2c3e50;
+            margin-top: 20px;
+        }
+
+        .kategori {
+            font-size: 16px;
+            font-weight: bold;
+            margin-top: 8px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="kalkulator">
+        <h2>⚖️ Kalkulator BMI</h2>
+
+        <input type="number" id="berat" placeholder="Masukkan Berat Badan (kg)"><br>
+        <input type="number" id="tinggi" placeholder="Masukkan Tinggi Badan (cm)"><br><br>
+
+        <button onclick="hitungBMI()">Hitung BMI</button>
+        <button onclick="reset()" style="background: #e74c3c;">Reset</button>
+
+        <div class="hasil">BMI: <span id="hasilAngka">0</span></div>
+        <div class="kategori" id="kategoriBMI"></div>
+    </div>
+
+    <script>
+        // Penjelasan: document.getElementById digunakan untuk mengambil nilai dari tag HTML
+        function hitungBMI() {
+            let berat = parseFloat(document.getElementById('berat').value);
+            let tinggiCm = parseFloat(document.getElementById('tinggi').value);
+
+            // Validasi input harus diisi dan lebih dari 0
+            if (isNaN(berat) || isNaN(tinggiCm) || berat <= 0 || tinggiCm <= 0) {
+                alert('Peringatan: Masukkan berat dan tinggi badan yang valid!');
+                return;
+            }
+
+            // Konversi tinggi dari cm ke meter
+            let tinggiM = tinggiCm / 100;
+
+            // Rumus BMI = berat (kg) / (tinggi (m) x tinggi (m))
+            let bmi = berat / (tinggiM * tinggiM);
+
+            document.getElementById('hasilAngka').innerHTML = bmi.toFixed(2);
+            document.getElementById('kategoriBMI').innerHTML = tentukanKategori(bmi);
+        }
+
+        function tentukanKategori(bmi) {
+            if (bmi < 18.5) {
+                return 'Kategori: Berat Badan Kurang';
+            } else if (bmi < 25) {
+                return 'Kategori: Berat Badan Normal';
+            } else if (bmi < 30) {
+                return 'Kategori: Berat Badan Berlebih';
+            } else {
+                return 'Kategori: Obesitas';
+            }
+        }
+
+        function reset() {
+            document.getElementById('berat').value = "";
+            document.getElementById('tinggi').value = "";
+            document.getElementById('hasilAngka').innerHTML = '0';
+            document.getElementById('kategoriBMI').innerHTML = '';
+        }
+    </script>
+</body>
+
+</html>
