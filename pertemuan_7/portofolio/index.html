@@ -3,56 +3,207 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portofolio Saya - Home</title>
+
+    <title>Iren | My Portfolio</title>
+
     <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
 
+    <!-- NAVBAR -->
     <nav>
-        <div class="container">
-            <div class="logo">MyPortofolio</div>
-            <button class="nav-toggle" id="nav-toggle" aria-label="Buka menu">&#9776;</button>
-            <ul class="nav-links" id="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="contact.html">Contact</a></li>
+        <div class="container nav-container">
+
+            <a href="index.html" class="logo">
+                Iren<span>.</span>
+            </a>
+
+            <ul class="nav-links">
+                <li>
+                    <a href="index.html">Home</a>
+                </li>
+
+                <li>
+                    <a href="about.html">About</a>
+                </li>
+
+                <li>
+                    <a href="contact.html">Contact</a>
+                </li>
             </ul>
+
         </div>
     </nav>
 
+
+    <!-- HERO -->
     <section class="hero">
-        <div class="container">
+
+        <div class="decoration circle-one"></div>
+        <div class="decoration circle-two"></div>
+        <div class="decoration star-one">✦</div>
+        <div class="decoration star-two">✧</div>
+
+        <div class="container hero-container">
+
             <div class="hero-content">
-                <h1>Halo, Saya <span id="typing-text"></span></h1>
-                <p>Mahasiswi Sistem Informasi</p>
-                <a href="contact.html" class="btn">Hubungi Saya</a>
+
+                <div class="hello-badge">
+                    <span>✦</span>
+                    Welcome to my portfolio
+                </div>
+
+                <h1>
+                    Halo, saya
+                    <br>
+                    <span id="typing-text"></span>
+                    <span class="cursor">|</span>
+                </h1>
+
+                <p class="hero-description">
+                    Mahasiswi Sistem Informasi yang sedang belajar,
+                    berkembang, dan membuat sesuatu melalui teknologi.
+                </p>
+
+                <div class="hero-buttons">
+
+                    <a href="about.html" class="btn primary-btn">
+                        Tentang Saya
+                    </a>
+
+                    <a href="contact.html" class="btn secondary-btn">
+                        Hubungi Saya →
+                    </a>
+
+                </div>
+
+                <div class="mini-info">
+
+                    <div>
+                        <strong>19</strong>
+                        <span>Years Old</span>
+                    </div>
+
+                    <div class="line"></div>
+
+                    <div>
+                        <strong>SI</strong>
+                        <span>Student</span>
+                    </div>
+
+                    <div class="line"></div>
+
+                    <div>
+                        <strong>3+</strong>
+                        <span>Projects</span>
+                    </div>
+
+                </div>
+
             </div>
+
+
+            <!-- PROFILE CARD -->
+            <div class="hero-card-wrapper">
+
+                <div class="hero-card">
+
+                    <div class="card-top">
+                        <span class="status-dot"></span>
+                        <span>Available to learn</span>
+                    </div>
+
+                    <div class="profile-circle">
+                        <span>IMT</span>
+                    </div>
+
+                    <h2>Iren Meiliani Taslim</h2>
+
+                    <p>
+                        Information Systems Student
+                    </p>
+
+                    <div class="code-box">
+                        <span>&lt;</span>
+                        <span>learning</span>
+                        <span>/&gt;</span>
+                    </div>
+
+                    <div class="card-decoration">
+                        ♡
+                    </div>
+
+                </div>
+
+            </div>
+
         </div>
     </section>
 
-    <section class="highlights">
+
+    <!-- PROJECTS -->
+    <section class="projects">
+
         <div class="container">
-            <div class="highlight-grid">
-                <div class="highlight-card">
-                    <div class="highlight-icon">&#128100;</div>
-                    <h3>Tentang Saya</h3>
-                    <p>Mahasiswi Sistem Informasi di Universitas Tanjungpura yang tertarik pada pengembangan web dan teknologi.</p>
-                    <a href="about.html" class="link-arrow">Selengkapnya &rarr;</a>
+
+            <div class="section-heading">
+
+                <div>
+                    <span class="section-label">
+                        MY WORK
+                    </span>
+
+                    <h2>
+                        Proyek yang
+                        <span>pernah saya buat.</span>
+                    </h2>
                 </div>
-                <div class="highlight-card">
-                    <div class="highlight-icon">&#9993;</div>
-                    <h3>Hubungi Saya</h3>
-                    <p>Punya pertanyaan atau ingin berkolaborasi? Kirimkan pesan kamu melalui halaman contact.</p>
-                    <a href="contact.html" class="link-arrow">Kirim Pesan &rarr;</a>
-                </div>
+
+                <p>
+                    Beberapa project yang saya kerjakan
+                    selama belajar pemrograman dan Sistem Informasi.
+                </p>
+
             </div>
+
+
+            <div class="project-grid" id="project-grid">
+                <!-- Project dibuat oleh JavaScript -->
+            </div>
+
         </div>
+
     </section>
 
+
+    <!-- FOOTER -->
     <footer>
-        <p>&copy; 2026 MyPortofolio</p>
+
+        <div class="container footer-content">
+
+            <div>
+                <div class="footer-logo">
+                    Iren<span>.</span>
+                </div>
+
+                <p>
+                    Learning. Creating. Growing.
+                </p>
+            </div>
+
+            <div class="footer-right">
+                <p>
+                    &copy; 2026 Iren Meiliani Taslim
+                </p>
+            </div>
+
+        </div>
+
     </footer>
 
+
     <script src="js/main.js"></script>
+
 </body>
 </html>
