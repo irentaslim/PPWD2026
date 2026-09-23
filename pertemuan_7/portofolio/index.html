@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portofolio Saya</title>
+    <title>Portofolio Saya - Home</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -11,8 +11,9 @@
     <nav>
         <div class="container">
             <div class="logo">MyPortofolio</div>
-            <ul class="nav-links">
-                <li><a href="index.html" class="active">Home</a></li>
+            <button class="nav-toggle" id="nav-toggle" aria-label="Buka menu">&#9776;</button>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
@@ -29,11 +30,21 @@
         </div>
     </section>
 
-    <section class="projects">
+    <section class="highlights">
         <div class="container">
-            <h2>Proyek Saya</h2>
-            <div class="project-grid" id="project-grid">
-                <!-- JavaScript akan generate -->
+            <div class="highlight-grid">
+                <div class="highlight-card">
+                    <div class="highlight-icon">&#128100;</div>
+                    <h3>Tentang Saya</h3>
+                    <p>Mahasiswi Sistem Informasi di Universitas Tanjungpura yang tertarik pada pengembangan web dan teknologi.</p>
+                    <a href="about.html" class="link-arrow">Selengkapnya &rarr;</a>
+                </div>
+                <div class="highlight-card">
+                    <div class="highlight-icon">&#9993;</div>
+                    <h3>Hubungi Saya</h3>
+                    <p>Punya pertanyaan atau ingin berkolaborasi? Kirimkan pesan kamu melalui halaman contact.</p>
+                    <a href="contact.html" class="link-arrow">Kirim Pesan &rarr;</a>
+                </div>
             </div>
         </div>
     </section>
