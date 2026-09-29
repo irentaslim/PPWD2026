@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ToDo_2025062</title>
+    <style>
+        body{font-family:Arial;max-width:400px;margin:40px auto;}
+        li{margin:8px 0;padding:8px;border-radius:5px; 
+            display:flex;justify-content:space-between;}
+        .tinggi{background:#ff9999;}
+        .sedang{background:#ffe680;}
+        .rendah{background:#b3e6b3;}
+        button{cursor:pointer;}
+    </style>
+</head>
+<body>
+    <h2>📝 To-Do List</h2>
+    <input type="text" id="input" placeholder="Tulis tugas..."> 
+    <select id="operator">
+        <option value="Tinggi">Tinggi</option>
+        <option value="Sedang">Sedang</option>
+        <option value="Rendah">Ringan</option>
+    </select>
+    <button id="tambah">Tambah</button>
+    <ul id="list"></ul>
+    <script>
+    const input = document.getElementById("input");
+    const op = document.getElementById("operator");
+    const btn = document.getElementById("tambah");
+    const list = document.getElementById("list");
+    btn.addEventListener("click", function() {
+        const teks = input.value.trim();
+        if (teks === "") { 
+            alert("Tugas tidak boleh kosong!"); 
+            return; 
+        }
+        const li = document.createElement("li");
+        li.innerHTML = `<span>${teks}</span>
+            <button class="hapus">Selesai</button>`;
+        if (op.value === "Tinggi") {
+            li.classList.add("tinggi");
+        } else if (op.value === "Sedang") {
+            li.classList.add("sedang");
+        } else {
+            li.classList.add("rendah");
+        }
+        li.querySelector(".hapus").addEventListener("click", function() {
+            li.remove();
+        });
+        if (op.value === "Tinggi") {
+            list.insertBefore(li, list.firstChild);
+        } else if (op.value === "Sedang") {
+            const rendah = list.querySelector(".rendah");
+            if (rendah) {
+                list.insertBefore(li, rendah);
+            } else {
+                list.appendChild(li);
+            }
+        } else {
+            list.appendChild(li);
+        }
+        input.value = "";
+    });
+    input.addEventListener("keypress", function(e) {
+        if (e.key === "Enter") btn.click();
+    });
+    </script>
+</body>
+</html>
