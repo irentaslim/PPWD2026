@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Cek Ganjil Genap</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 400px;
+            margin: 50px auto;
+            padding: 20px;
+            background: #e713bd;
+        }
+
+        .container {
+            background: rgb(42, 255, 202);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        input {
+            padding: 10px;
+            margin: 10px;
+            font-size: 16px;
+            width: 80%;
+            box-sizing: border-box;
+        }
+
+        button {
+            padding: 10px 20px;
+            margin: 10px;
+            font-size: 16px;
+            background: #820606;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #c4df9b;
+        }
+
+        .hasil {
+            font-size: 24px;
+            font-weight: bold;
+            color: #2c3e50;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h2>🔢 Cek Ganjil / Genap</h2>
+
+        <input 
+            type="number" 
+            id="angka" 
+            placeholder="Masukkan sebuah angka"
+        >
+
+        <br>
+
+        <button onclick="cekGanjilGenap()">Cek Angka</button>
+
+        <div class="hasil">
+            <span id="hasil">Hasil akan muncul di sini</span>
+        </div>
+
+    </div>
+
+    <script>
+        function cekGanjilGenap() {
+
+            // Mengambil nilai angka dari input
+            let angka = parseInt(document.getElementById("angka").value);
+
+            // Mengecek apakah input kosong
+            if (isNaN(angka)) {
+                document.getElementById("hasil").innerHTML =
+                    "Silakan masukkan angka!";
+                return;
+            }
+
+            // Mengecek ganjil atau genap menggunakan modulus % 2
+            if (angka % 2 === 0) {
+                document.getElementById("hasil").innerHTML =
+                    "Angka " + angka + " adalah GENAP";
+            } else {
+                document.getElementById("hasil").innerHTML =
+                    "Angka " + angka + " adalah GANJIL";
+            }
+        }
+    </script>
+
+</body>
+
+</html>

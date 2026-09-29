@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Konversi Nilai Mahasiswa</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 400px;
+            margin: 50px auto;
+            padding: 20px;
+            background: #d00181;
+        }
+
+        .kalkulator {
+            background: rgb(4, 234, 211);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px lch(75.33% 42.99 163.71 / 0.1);
+            text-align: center;
+        }
+
+        input {
+            padding: 10px;
+            margin: 5px;
+            font-size: 16px;
+            width: 80%;
+            box-sizing: border-box;
+        }
+
+        button {
+            padding: 10px 15px;
+            margin: 5px;
+            font-size: 16px;
+            background: #ff05c9;
+            color: rgb(0, 0, 0);
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #ffbff1;
+        }
+
+        .hasil {
+            font-size: 28px;
+            font-weight: bold;
+            color: #2c3e50;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="kalkulator">
+        <h2>📝 Konversi Nilai</h2>
+
+        <input type="number" id="nilai" placeholder="Masukkan Nilai (0-100)"><br><br>
+
+        <button onclick="konversiNilai()">Konversi</button>
+        <button onclick="reset()" style="background: #e74c3c;">Reset</button>
+
+        <div class="hasil">Grade: <span id="idTarget">-</span></div>
+    </div>
+
+    <script>
+        // Penjelasan: document.getElementById digunakan untuk mengambil nilai dari tag HTML
+        function konversiNilai() {
+            let nilai = parseFloat(document.getElementById('nilai').value);
+
+            // Validasi input harus diisi dan dalam rentang 0-100
+            if (isNaN(nilai) || nilai < 0 || nilai > 100) {
+                alert('Peringatan: Masukkan nilai antara 0 sampai 100!');
+                return;
+            }
+
+            let grade;
+
+            // Percabangan if - else if - else
+            if (nilai >= 90 && nilai <= 100) {
+                grade = 'A';
+            } else if (nilai >= 80 && nilai <= 89) {
+                grade = 'B';
+            } else if (nilai >= 70 && nilai <= 79) {
+                grade = 'C';
+            } else if (nilai >= 60 && nilai <= 69) {
+                grade = 'D';
+            } else {
+                grade = 'E';
+            }
+
+            document.getElementById('idTarget').innerHTML = grade;
+        }
+
+        function reset() {
+            document.getElementById('nilai').value = "";
+            document.getElementById('idTarget').innerHTML = '-';
+        }
+    </script>
+</body>
+
+</html>
