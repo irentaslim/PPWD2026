@@ -1,26 +1,23 @@
-name: Deploy to InfinityFree
+"name: Deploy to Teacher Server
 
 on:
   push:
     branches:
       - main
+  workflow_dispatch:
 
 jobs:
-  ftp-deploy:
-    name: Deploy via FTP
+  deploy:
     runs-on: ubuntu-latest
+
     steps:
-      - name: Checkout repo
+      - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Upload to InfinityFree via FTP
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
-        with:
-          server: ${{ secrets.FTP_SERVER }}
-          username: ${{ secrets.FTP_USERNAME }}
-          password: ${{ secrets.FTP_PASSWORD }}
-          server-dir: /htdocs/
-          exclude: |
-            **/.git*
-            **/.git*/**
-            **/node_modules/**
+      - name: Trigger aaPanel Webhook
+        env:
+          WEBHOOK_KEY: ${{ secrets.AAPANEL_WEBHOOK_KEY }}
+        run: |
+          curl -kfsS --retry 2 --retry-delay 3 \
+            -X POST \
+            ""https://103.171.84.81:25181/hook?access_key=${WEBHOOK_KEY}"""
